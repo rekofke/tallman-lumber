@@ -1,0 +1,54 @@
+{['Framing Lumber', 'Trim/Millwork', 'Sheathing', 'Tools'].map((product, idx) => (
+                        <Col md={3} key={idx}>
+                            {/* 4 columns on medium screens */}
+                            <Card className="mb-4 h-100 shadow-sm">
+                                <Card.Img
+                                    variant="top"
+                                    src=""
+                                    className="img-fluid rounded-top"
+                                    alt=""
+                                />
+                                <Card.Body>
+                                    <Card.Title>Dimenstional Lumber</Card.Title>
+                                        <Card.Text>
+                                            We stock a wide range of dimensional lumber to meet all your construction needs. 
+                                            We carry 1x, 2x and 3x material ranging from 4" - 12" in lengths fromn 8'- 20'. See our 
+                                            products page for specific dimensions. to 
+                                        </Card.Text>
+                                        <Button variant="outline-primary">Learn More</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+
+
+
+<Container className="my-5">
+      <h1 className="mb-4">Our Products</h1>
+      <Table striped bordered hover responsive>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Width</th>
+            <th>Lengths</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Douglas Fir</td>
+            <td>2x4, 2x6, 2x8, 2x10, 2x12</td>
+            <td>8ft, 10ft, 12ft, 16ft, and 20ft</td>
+          </tr>
+          <tr>
+            <td>Pressure Treated</td>
+            <td>2x4, 2x6, 2x8, 2x12, 4x4, 4x6, 6x6</td>
+            <td>10ft, 12ft, 16ft, 20ft</td>
+          </tr>
+          <tr>
+            <td>Pine</td>
+            <td>1x4, 1x6, 1x8, 1x12</td>
+            <td>8ft, 10ft, 12ft, 16ft</td>
+          </tr>
+        </tbody>
+      </Table>
+    </Container>
