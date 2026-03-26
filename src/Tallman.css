@@ -1,81 +1,83 @@
-:root{
-    --navy: #0a192f;      /* Dark navy */
-    --royal: #4169e1;     /* Royal blue */
-    --gray: #6c757d;       /* Bootstrap's gray-600 */
-    --light-gray: #f8f9fa; /* Light background */
+:root {
+  --navy: #0a192f; /* Dark navy */
+  --royal: #4169e1; /* Royal blue */
+  --gray: #6c757d; /* Bootstrap's gray-600 */
+  --light-gray: #cfd2d5c6; /* Light background */
 }
 
 /*  Navbar Styles */
 .navbar.bg-dark {
-    background-color: var(--navy) !important;
+  background-color: var(--navy) !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: white !important;
+  color: white !important;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: var(--royal) !important;
+  color: var(--royal) !important;
 }
 
 .navbar-barnd {
-    color: white !important;
-    font-weight: bold;
+  color: white !important;
+  font-weight: bold;
 }
 
- /* Button Styles */
+/* Button Styles */
 .btn-primary {
-    background-color: var(--royal);
-    border-color: var(--royal);
+  background-color: var(--royal);
+  border-color: var(--royal);
 }
 .btn primary:hover {
-    background-color: #3151b3; /* darker royal */
-    border-color: #3151b3;
+  background-color: #3151b3; /* darker royal */
+  border-color: #3151b3;
 }
 
 .btn-outline-primary {
-    color: var(--royal);
-    border-color: var(--royal);
+  color: var(--royal);
+  border-color: var(--royal);
 }
 
 .btn-outline-primary:hover {
-    background-color:(--royal);
-    color: white;
+  background-color: (--royal);
+  color: white;
 }
 
 .btn-secondary {
-    background-color: var(--gray);
-    border-color: var(--gray);
+  background-color: var(--gray);
+  border-color: var(--gray);
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268; /* darker gray */
+  background-color: #5a6268; /* darker gray */
 }
 
 /* Card Styles */
 .card {
-    border: none;                /* remove default border */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: none; /* remove default border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /*  Section Headers */
 h2 {
-    position: relative;
-    margin-bottom: 1.5rem;
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 h2:after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--royal);
-    margin-top: 8px;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--royal);
+  margin-top: 8px;
 }
 
 /* Footer */
@@ -91,26 +93,37 @@ footer a:hover {
 
 /* Tables */
 .table thead {
-    background-color: var(--navy);
-    color: white;
+  background-color: var(--navy);
+  color: white;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: var(--light-gray);
+  background-color: var(--light-gray);
 }
 
 /* Design Update */
 .bg-image .mask {
-    background: linear-gradient(135deg, rgba(10,25,47,0.9), rgba(65,105,225,0.8)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 25, 47, 0.9),
+    rgba(65, 105, 225, 0.8)
+  ) !important;
 }
 
 .shadow-hover {
-    transition: box-shadow 0.2s;
-
+  transition: box-shadow 0.2s;
 }
 .shadow-hover:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-a, button {
+a,
+button {
   transition: all 0.2s ease-in-out;
+}
+
+/* Reviews */
+@media (max-width: 576px) {
+  .reviews-wrapper {
+    padding: 1rem !important;
+  }
 }

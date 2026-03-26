@@ -2,27 +2,28 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 
-// Initialize EmailJS with your public key (as a string)
-emailjs.init({
-  publicKey: "fKStqCPxCnu6RfbCj", // <-- quotes added
-});
+// Replace with your actual IDs from EmailJS
+const YOUR_SERVICE_ID = "service_rkxehtc"; // from Email Services
+const YOUR_GENERAL_TEMPLATE_ID = "template_00g8o3e"; // from General Inquiry template
+const YOUR_QUOTE_TEMPLATE_ID = "template_acf4hcn"; // from Quote Request template
+const YOUR_PUBLIC_KEY = "OOjOprSr0bMkHSOlZ"; // from Account → API Keys
 
-// Replace these with your actual values from EmailJS (now in quotes)
-const YOUR_SERVICE_ID = "service_qgwb86c"; // <-- quotes
-const YOUR_GENERAL_TEMPLATE_ID = "template_7qfrn8b"; // <-- quotes
-const YOUR_QUOTE_TEMPLATE_ID = "template_hekne6ks"; // <-- quotes
+// Initialize EmailJS with your public key (once, outside the component)
+emailjs.init({
+  publicKey: YOUR_PUBLIC_KEY,
+});
 
 const Contact = () => {
   const [key, setKey] = useState("general");
 
-  // State for general form
+  // General form state
   const [generalData, setGeneralData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // State for quote form
+  // Quote form state
   const [quoteData, setQuoteData] = useState({
     name: "",
     email: "",
@@ -31,7 +32,6 @@ const Contact = () => {
     details: "",
   });
 
-  // Loading states to prevent double submissions
   const [generalLoading, setGeneralLoading] = useState(false);
   const [quoteLoading, setQuoteLoading] = useState(false);
 
@@ -52,18 +52,15 @@ const Contact = () => {
         from_name: generalData.name,
         from_email: generalData.email,
         message: generalData.message,
-        to_email: "tallmanlumber1955@gmail.com", // Your business email
       })
       .then(
-        (result) => {
-          alert("Thank you! Your message has been sent successfully.");
+        () => {
+          alert("Thank you! Your message has been sent.");
           setGeneralData({ name: "", email: "", message: "" });
           setGeneralLoading(false);
         },
         (error) => {
-          alert(
-            "Oops! Something went wrong. Please try again or call us directly.",
-          );
+          alert("Oops! Something went wrong. Please try again.");
           console.error("EmailJS error:", error);
           setGeneralLoading(false);
         },
@@ -81,11 +78,10 @@ const Contact = () => {
         phone: quoteData.phone,
         projectType: quoteData.projectType,
         details: quoteData.details,
-        to_email: "tallmanlumber1955@gmail.com",
       })
       .then(
-        (result) => {
-          alert("Thank you for your quote request! We'll contact you shortly.");
+        () => {
+          alert("Thank you! Your quote request has been sent.");
           setQuoteData({
             name: "",
             email: "",
@@ -96,9 +92,7 @@ const Contact = () => {
           setQuoteLoading(false);
         },
         (error) => {
-          alert(
-            "Oops! Something went wrong. Please try again or call us directly.",
-          );
+          alert("Oops! Something went wrong. Please try again.");
           console.error("EmailJS error:", error);
           setQuoteLoading(false);
         },
@@ -118,29 +112,27 @@ const Contact = () => {
           >
             <Tab eventKey="general" title="General Inquiry">
               <Form onSubmit={handleGeneralSubmit}>
-                <Form.Group className="mb-3" controlId="formName">
+                <Form.Group className="mb-3">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="name"
                     value={generalData.name}
                     onChange={handleGeneralChange}
-                    placeholder="Enter your name"
                     required
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formEmail">
+                <Form.Group className="mb-3">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
                     value={generalData.email}
                     onChange={handleGeneralChange}
-                    placeholder="Enter your email"
                     required
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formMessage">
+                <Form.Group className="mb-3">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -148,15 +140,10 @@ const Contact = () => {
                     name="message"
                     value={generalData.message}
                     onChange={handleGeneralChange}
-                    placeholder="How can we help?"
                     required
                   />
                 </Form.Group>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  disabled={generalLoading}
-                >
+                <Button type="submit" disabled={generalLoading}>
                   {generalLoading ? "Sending..." : "Send Message"}
                 </Button>
               </Form>
@@ -164,39 +151,36 @@ const Contact = () => {
 
             <Tab eventKey="quote" title="Request a Quote">
               <Form onSubmit={handleQuoteSubmit}>
-                <Form.Group className="mb-3" controlId="quoteName">
+                <Form.Group className="mb-3">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="name"
                     value={quoteData.name}
                     onChange={handleQuoteChange}
-                    placeholder="Your name"
                     required
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="quoteEmail">
+                <Form.Group className="mb-3">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
                     value={quoteData.email}
                     onChange={handleQuoteChange}
-                    placeholder="Your email"
                     required
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="quotePhone">
+                <Form.Group className="mb-3">
                   <Form.Label>Phone</Form.Label>
                   <Form.Control
                     type="tel"
                     name="phone"
                     value={quoteData.phone}
                     onChange={handleQuoteChange}
-                    placeholder="Best number to reach you"
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="projectType">
+                <Form.Group className="mb-3">
                   <Form.Label>Project Type</Form.Label>
                   <Form.Select
                     name="projectType"
@@ -204,14 +188,14 @@ const Contact = () => {
                     onChange={handleQuoteChange}
                   >
                     <option value="">Select...</option>
-                    <option value="new-construction">New Construction</option>
-                    <option value="remodel">Remodel</option>
-                    <option value="deck">Deck/Patio</option>
-                    <option value="other">Other</option>
+                    <option value="New Construction">New Construction</option>
+                    <option value="Remodel">Remodel</option>
+                    <option value="Deck/Patio">Deck/Patio</option>
+                    <option value="Other">Other</option>
                   </Form.Select>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="quoteDetails">
-                  <Form.Label>Tell us about your lumber needs</Form.Label>
+                <Form.Group className="mb-3">
+                  <Form.Label>Project Details</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={3}
@@ -221,7 +205,7 @@ const Contact = () => {
                     placeholder="Dimensions, quantities, materials, etc."
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit" disabled={quoteLoading}>
+                <Button type="submit" disabled={quoteLoading}>
                   {quoteLoading ? "Sending..." : "Request Quote"}
                 </Button>
               </Form>

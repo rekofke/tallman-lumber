@@ -7,6 +7,7 @@ const referrals = [
     contact: "Mike Thompson",
     phone: "775-304-7643",
     Services: "Sales - Design - Installation - Remodels",
+    logo: null,
   },
   {
     name: "J.R. Builders",
@@ -65,6 +66,12 @@ const referrals = [
     name: "A & J Highmark Construction",
     contact: "Alex",
     phone: "775-304-1114",
+  },
+  {
+    name: "Alberto Estrada",
+    phone: "775-304-4517",
+    services:
+      "Multi-talented handyman services including drywall, painting, tile, decks, and more",
   },
 ];
 

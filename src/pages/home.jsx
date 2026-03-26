@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import HeroImage from "../components/HeroImage.jsx";
+import ReviewsWidget from "../components/ReviewsWidget";
 
 const Home = () => {
   const products = [
@@ -31,10 +32,11 @@ const Home = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <>
       <HeroImage />
-
       {/* Section 1: About Us */}
       <Container className="my-10">
         <Row className="align-items-center">
@@ -47,7 +49,13 @@ const Home = () => {
               to helping you build your dreams with expert advice and top-notch
               products.
             </p>
-            <Button variant="primary" href="/about">
+            <Button
+              variant="primary"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/about");
+              }}
+            >
               Read our Story
             </Button>
           </Col>
@@ -60,8 +68,14 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-
-      {/* Section 2: Featured Products */}
+      /* Section 2: Customer Reviews */
+      <Container className="my-5">
+        {/* <h2 className="text-center my-4">Reviews</h2> */}
+        <div className="reviews-wrapper p-4 bg-light round3d shadow-sm">
+          <ReviewsWidget />
+        </div>
+      </Container>
+      ;{/* Section 3: Featured Products */}
       <Container className="my-5">
         <h2 className="text-center my-4">Our Products</h2>
         <Row>
