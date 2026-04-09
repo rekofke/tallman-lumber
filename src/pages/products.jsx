@@ -29,40 +29,37 @@ function Products() {
       widths: '1x4", 1x6", 1x8", 1x12"',
       lengths: "8ft, 10ft, 12ft, 16ft",
     },
+    {
+      type: "Cedar",
+      widths: "1x4, 1x6",
+      lengths: "12ft",
+    },
   ];
 
   const hardWoods = [
     {
-      type: "Cedar",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
-    },
-    {
       type: "Poplar",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
+      widths: "Random widths (1x4+)",
+      lengths: "Random lengths (10ft+)",
     },
     {
       type: "Birch",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
+      widths: "Random widths (1x4+)",
+      lengths: "Random lengths (10ft+)",
     },
     {
       type: "African Mahogany",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
+      widths: "Random widths (1x4+)",
+      lengths: "Random lengths (10ft+)",
     },
     {
       type: "Red Oak",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
-    },
-    {
-      type: "Alder",
-      widths: '1x4", 1x6", 1x8"',
-      lengths: "Random lengths typically 10ft - 12ft",
+      widths: "Random widths (1x4+)",
+      lengths: "Random lengths typically (10ft+)",
     },
   ];
+
+  // Trim Products Section
 
   const sheathingProducts = [
     { type: "OSB", thickness: '7/16", 5/8", 3/4" T&G' },
@@ -77,8 +74,8 @@ function Products() {
   ];
 
   const backerBoardProducts = [
-    { type: "FiberRock", thickness: '1/4"', dimensions: "3x5ft" },
-    { type: "Durock", thickness: '1/2"', dimensions: "3x5ft" },
+    { type: "Grip-Rite", thickness: '1/4"', dimensions: "3x5ft" },
+    { type: "Grip-Rite", thickness: '1/2"', dimensions: "3x5ft" },
   ];
 
   const sheetrockProducts = [
@@ -111,7 +108,26 @@ function Products() {
   //Part II: Render Product Information
   return (
     <Container className="my-5">
-      <h1 className="mb-4">Our Products</h1>
+      {/* USP Highlight Section */}
+      <div
+        className="text-center p-4 p-md-5 mb-4 rounded shadow-sm"
+        style={{
+          backgroundColor: "#f0f4fc",
+          borderLeft: `5px solid #4169e1`, // royal blue
+          borderRight: `5px solid #4169e1`,
+        }}
+      >
+        <h2 className="display-5 fw-bold" style={{ color: "#0a192f" }}>
+          {" "}
+          {/* navy */}
+          From foundation to finishing touch
+        </h2>
+        <p className="lead fs-4 mt-3" style={{ color: "#2c3e66" }}>
+          Lumber, doors, windows, cabinets, trim, roofing, and hardware – all
+          under one roof, with expert advice at every step.
+        </p>
+      </div>
+
       {/* Lumber Products Section */}
       <h2 id="Lumber" className="mb-3">
         Lumber & Structural Materials
@@ -170,8 +186,77 @@ function Products() {
         Our trim and millwork selection includes a variety of profiles and
         materials to suit any project. From classic crown molding to modern
         baseboards, we have the perfect finishing touches for your home. Our
-        products are available in wood, MDF, and PVC options, ensuring
-        durability and style for both interior and exterior applications.
+        products are available in oak, pine and MDF options, ensuring durability
+        and style for both interior and exterior applications.
+      </p>
+
+      <div className="row">
+        <div className="col-md-6">
+          <ul className="list-group list-group-flush shadow-sm rounded">
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>CSMDF</strong>
+              <span className="badge bg-secondary rounded-pill">
+                3 1/4 & 2 1/4
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Pine</strong>
+              <span className="badge bg-secondary rounded-pill">
+                1½", 2½", 3½"
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Inside & Outside Corner - Oak & Pine</strong>
+              <span className="badge bg-secondary rounded-pill">Available</span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Bevel (Oak & Pine)</strong>
+              <span className="badge bg-secondary rounded-pill">
+                Various sizes
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Crown Moulding (MDF)</strong>
+              <span className="badge bg-secondary rounded-pill">2¼", 3¼"</span>
+            </li>
+          </ul>
+        </div>
+        <div className="col-md-6">
+          <ul className="list-group list-group-flush shadow-sm rounded">
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Full Round</strong>
+              <span className="badge bg-secondary rounded-pill">
+                Various diameters
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Quarter Round</strong>
+              <span className="badge bg-secondary rounded-pill">
+                Various sizes
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Chamfer</strong>
+              <span className="badge bg-secondary rounded-pill">
+                Standard sizes
+              </span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Screen Moulding</strong>
+              <span className="badge bg-secondary rounded-pill">Available</span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              <strong>Cap Moulding</strong>
+              <span className="badge bg-secondary rounded-pill">
+                Multiple profiles
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p className="mt-3 text-muted">
+        * Many other styles and profiles available – Come on in or give us a
+        call to discuss your specific needs!
       </p>
 
       {/* Sheathing & Panel Products Section */}
@@ -384,8 +469,7 @@ function Products() {
           <p>
             We offer a wide selection of windows including single & double-hung,
             vented sliding and more, Energy-efficient options are available. Our
-            partnership with leading manufacturers ensures quality and
-            durability.
+            partnership with Amsco ensures quality and durability.
           </p>
         </Col>
         <Col md={6}>

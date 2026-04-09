@@ -24,6 +24,13 @@ const referrals = [
       "Paver patios/walkways | Retaining walls | edging | Sprinkler systems | Sod",
   },
   {
+    name: "SJ Service LLC",
+    contact: "Sergio Justo",
+    phone: "775-555-7952",
+    email: "sjservicellc1987@gmail.com",
+    services: "General handyman services"
+  }
+  {
     name: "Fredy's Handyman Services",
     contact: "Fredy Ojendiz",
     phone: "775-770-8603",

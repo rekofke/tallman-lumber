@@ -6,11 +6,19 @@ const About = () => {
       <Row>
         <Col md={6}>
           <h1>About Tallman Lumber</h1>
-          <p className="lead">
-            Your local family-owned lumber yard dedicated to providing
-            top-quality materials and excellent service.
-          </p>
-
+          {/* accent box for USP nd support paragraph */}
+          <div className="usp-box text-center p-4 mb-4 rounded shadow-sm">
+            <h3 className="lead fw-bold mb-3" style={{ color: "#0a192f" }}>
+              "Your neighbors. Your lumberyard."
+            </h3>
+            <p
+              className="mb-0"
+              style={{ fontSize: "1.1rem", color: "#2c3e66" }}
+            >
+              Your local family-owned lumber yard dedicated to providing
+              top-quality materials and excellent service.
+            </p>
+          </div>
           <Row className="mt-5">
             <Col md={12}>
               <h3>Our History</h3>
@@ -61,7 +69,7 @@ const About = () => {
 
         <Col md={6}>
           <img
-            src="/tallman_media/Tallman Jpg/Old Tallman.jpg"
+            src="/tallman_media/Tallman Jpg/Old TallmanPic.png"
             className="img-fluid rounded mb-4"
             alt="Tallman Lumber historic photo"
           />

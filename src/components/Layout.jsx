@@ -5,6 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import PromoModal from "./PromoModal.jsx";
+import NewsletterSignup from "./NewsletterSignup";
 
 function Layout() {
   return (
@@ -35,11 +36,13 @@ function Layout() {
                   FAQ
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/referrals">
-                  referrals
+                  Local Referrals
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/support">
-                  Support
+                <NavDropdown.Item as={Link} to="/projects">
+                  Customer Projects
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/tools">
+                  Helpful Tools
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -53,9 +56,27 @@ function Layout() {
 
       <footer className="bg-dark text-white text-center py-3 mt-5">
         <Container>
-          &copy; {new Date().getFullYear()} Tallman Lumber. All rights reserved.
+          <div className="mb-3">
+            <strong>Join our newsletter</strong>
+            <NewsletterSignup />
+          </div>
+          <div>
+            &copy; {new Date().getFullYear()} Tallman Lumber. All rights
+            reserved.
+            <br />
+            <small>
+              <Link to="/privacy" className="text-white-50 me-2">
+                Privacy
+              </Link>{" "}
+              |
+              <Link to="/terms" className="text-white-50 ms-2">
+                Terms
+              </Link>
+            </small>
+          </div>
         </Container>
       </footer>
+
       <PromoModal />
     </>
   );

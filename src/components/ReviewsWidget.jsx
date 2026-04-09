@@ -10,7 +10,7 @@ const ReviewsWidget = () => {
 
   return (
     <div
-      class="elfsight-app-1b9c5674-bd8b-4fc2-89f9-299794247f50"
+      className="elfsight-app-1b9c5674-bd8b-4fc2-89f9-299794247f50"
       data-elfsight-app-lazy
     ></div>
   );

@@ -18,13 +18,13 @@ export default function HeroImage() {
         >
           <div className="text-white">
             <h1 className="mb-3">Tallman Lumber</h1>
-            <h4 className="mb-3">Proudly serving northern Nevada since 1955</h4>
+            <h4 className="mb-3">Lumber with a handshake!</h4>
             <Link
               to="/contact#quote"
               className="btn btn-outline-light btn-lg"
               role="button"
             >
-              Click here for a free quote!
+              Free quote one click away!
             </Link>
           </div>
         </div>
