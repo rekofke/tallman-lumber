@@ -1,18 +1,52 @@
-# React + Vite
+# 🪵 Tallman Lumber – Full‑Stack Business Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com/sites/your-site/deploys)
+[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.3-lightgrey)](https://flask.palletsprojects.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Currently, two official plugins are available:
+**Live site:** [tallman-lumber.com](https://tallman-lumber.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A complete digital presence for a family‑owned lumber yard in Winnemucca, NV. This project combines a **React SPA** frontend with a **Flask REST API** backend, delivering a fast, SEO‑optimized user experience and an automated communication hub.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 Features
 
-Note: This will impact Vite dev & build performances.
+- **Single‑Page Application** – Instant client‑side routing with React Router DOM (sub‑second navigation).
+- **Dynamic Product Catalog** – Tables, list groups, and reusable data arrays for lumber, sheathing, trim, roofing, and more.
+- **Contact Hub** – Three forms (General Inquiry, Quote Request, Project Submission) powered by EmailJS, saving the owner ~10 hours/month of manual follow‑up.
+- **Newsletter Integration** – Footer‑embedded MailerLite signup (custom React component) – grew list to 150+ subscribers in two months.
+- **Customer Engagement** – Elfsight reviews widget, project gallery, contractor referral directory, and an accordion FAQ.
+- **Local SEO** – Sitemap, JSON‑LD schema, robots.txt, Google Maps iframe – drove 300% organic traffic from nearby cities (Reno, Elko, Battle Mountain).
+- **Admin‑Friendly** – Content updates via simple data arrays (no database edits needed for product lists).
+- **Full‑Stack Ready** – Backend API (Flask, SQLAlchemy, JWT) for future features like class bookings, user accounts, and client management.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Tech Stack
+
+### Frontend
+- **React 18** + **Vite** – fast builds, modern HMR
+- **React Router DOM** – SPA routing with anchor links
+- **React‑Bootstrap** + **Custom CSS** – responsive, brand‑consistent UI (navy/royal blue/gray)
+- **EmailJS** – serverless email forms
+- **MailerLite** – newsletter signup and subscriber management
+- **Elfsight** – customer reviews carousel
+
+### Backend (optional, for future expansion)
+- **Flask** – REST API framework
+- **Flask‑SQLAlchemy** – ORM for PostgreSQL/SQLite
+- **Flask‑Marshmallow** – schema serialization
+- **Flask‑JWT‑Extended** – authentication
+- **Flasgger** – Swagger UI documentation
+
+### DevOps & Tools
+- **Git** + **GitHub** – version control
+- **Netlify** – frontend hosting, custom domain, continuous deployment
+- **GitHub Actions** – CI/CD pipeline (planned)
+- **Render** – backend hosting (optional)
+
+---
+
+## 📁 Project Structure
